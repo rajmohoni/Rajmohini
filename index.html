@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="অলৌকিক কার্যক্ষমতা সম্পন্ন রাজ-সোলেমানি আংটি - Gadget Valley">
+  <title>রাজমোহিনী আংটি | Ruqiya Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-wrapper">
+
+  <div class="top-bar"><div class="container"><div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+    <span><i class="fas fa-phone me-2"></i>হেল্পলাইন: 01XXXXXXXXX</span>
+    <span><i class="fas fa-truck me-2"></i>সারাদেশে ডেলিভারি | ক্যাশ অন ডেলিভারি</span>
+    <span><i class="fas fa-shield-alt me-2"></i>১০০% অরিজিনাল গ্যারান্টি</span>
+  </div></div></div>
+
+  <nav class="main-navbar"><div class="container"><div class="d-flex justify-content-between align-items-center py-2">
+    <div class="brand-logo"><span class="brand-icon">🔮</span><span class="brand-text">Ruqiya <span class="brand-highlight">Care</span></span></div>
+    <div class="nav-links d-none d-md-flex gap-4">
+    </div>
+    <a href="#order" class="order-btn-nav"><i class="fas fa-shopping-cart me-2"></i>অর্ডার করুন</a>
+  </div></div></nav>
+
+  <div class="notif-popup show" id="notifPopup">
+    <div class="notif-icon">🛒</div><div class="notif-content">
+      <div class="notif-title">নতুন অর্ডার!</div><div class="notif-msg" id="notifMsg">রহিম সাহেব (ঢাকা) এইমাত্র অর্ডার করেছেন!</div>
+    </div>
+  </div>
+
+  <div class="hero-section"><div class="hero-overlay"><div class="container"><div class="row align-items-center min-vh-hero">
+    <div class="col-lg-6">
+      <div class="hero-badge">⭐ সীমিত সময়ের অফার ⭐</div>
+      <h1 class="hero-title">অলৌকিক কার্যক্ষমতা সম্পন্ন<br><span class="hero-title-highlight">রাজমোহিনী আংটি</span></h1>
+      <p class="hero-subtitle">বিপদ, কালো জাদু এবং বদনজরের <strong>শক্তিশালী সমাধান</strong></p>
+      <div class="hero-features">
+        <div class="hero-feature-item"><span>✅</span> কালো জাদু থেকে সুরক্ষা</div>
+        <div class="hero-feature-item"><span>✅</span> বদনজর দূর করে</div>
+        <div class="hero-feature-item"><span>✅</span> রিজিক ও বরকত বৃদ্ধি</div>
+        <div class="hero-feature-item"><span>✅</span> মানসিক শান্তি প্রদান</div>
+      </div>
+      <div class="hero-price-box"><div class="price-old">৳ ৪,৫০০</div><div class="price-new"></div><div class="price-badge"></div></div>
+      <div class="hero-timer"><div class="timer-label">⏰ অফার শেষ হবে:</div><div class="timer-boxes">
+        <div class="timer-box"><span id="hours">05</span><small>ঘন্টা</small></div><div class="timer-sep">:</div>
+        <div class="timer-box"><span id="minutes">47</span><small>মিনিট</small></div><div class="timer-sep">:</div>
+        <div class="timer-box"><span id="seconds">23</span><small>সেকেন্ড</small></div>
+      </div></div>
+      <a href="#order" class="hero-cta-btn"><i class="fas fa-shopping-bag me-2"></i>এখনই অর্ডার করুন</a>
+    </div>
+    <div class="col-lg-6 text-center mt-4 mt-lg-0"><div class="hero-img-container">
+      <img src="images/ring-hero.png" alt="রাজ-সোলেমানি আংটি" class="hero-product-img"><div class="hero-img-glow"></div>
+    </div></div>
+  </div></div></div></div>
+
+  <div class="trust-section"><div class="container"><div class="row g-3"><div class="col-6 col-md-4 col-lg"><div class="trust-badge"><div class="trust-icon">🔒</div><div class="trust-title">১০০% অরিজিনাল</div><div class="trust-sub">সার্টিফাইড পণ্য</div></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="trust-badge"><div class="trust-icon">🚚</div><div class="trust-title">ফ্রি ডেলিভারি</div><div class="trust-sub">সারাদেশে ডেলিভারি</div></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="trust-badge"><div class="trust-icon">💰</div><div class="trust-title">ক্যাশ অন ডেলিভারি</div><div class="trust-sub">পণ্য পেয়ে টাকা দিন</div></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="trust-badge"><div class="trust-icon">🔄</div><div class="trust-title"> ২৪ ঘণ্টায় রিটার্ন</div><div class="trust-sub">সমস্যায় ফেরত নিন</div></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="trust-badge"><div class="trust-icon">⭐</div><div class="trust-title">৫০০০+ সন্তুষ্ট গ্রাহক</div><div class="trust-sub">বিশ্বস্ত বিক্রেতা</div></div></div></div></div></div>
+
+  <div id="product" class="product-section"><div class="container">
+    <div class="section-header text-center mb-5"><div class="section-badge">🔮 পণ্যের বিবরণ</div><h2 class="section-title">রাজমোহিনী আংটি</h2></div>
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-5"><div class="product-gallery">
+        <div class="main-img-box"><img id="mainProductImg" src="images/ring-hero.png" alt="Product" class="main-product-img"><div class="img-badge-new">নতুন</div></div>
+        <div class="thumb-row">
+          <div class="thumb-img active" data-img="images/ring-hero.png"><img src="images/ring-hero.png" alt="thumb-0"></div>
+          <div class="thumb-img" data-img="images/ring-product.png"><img src="images/ring-product.png" alt="thumb-1"></div>
+          <div class="thumb-img" data-img="images/ring-benefits.png"><img src="images/ring-benefits.png" alt="thumb-2"></div>
+        </div>
+      </div></div>
+
+      <div class="col-lg-7"><div class="product-info">
+        <div class="product-badges mb-3"><span class="badge-hot">🔥 সর্বাধিক বিক্রিত</span><span class="badge-stock">✅ স্টকে আছে</span></div>
+        <h2 class="product-title">রাজমোহিনী আংটি</h2>
+        <div class="product-rating mb-3"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rating-count">(৪.৯/৫) - ৫২৩টি রিভিউ</span></div>
+        <div class="product-price-wrap mb-4"><span class="product-price">৳ - </span><span class="product-price-old">৳ ৪,৫০০</span><span class="discount-tag">৪৮% ছাড়</span></div>
+        <div class="product-features mb-4">
+          <div class="feature-item"><i class="fas fa-check-circle"></i> সম্পূর্ণ পিতল দিয়ে তৈরি</div>
+          <div class="feature-item"><i class="fas fa-check-circle"></i> খাঁটি রূপা ও সোনার প্রলেপযুক্ত ফ্রেম</div>
+          <div class="feature-item"><i class="fas fa-check-circle"></i> আরবি কোরআনিক আয়াত খোদাই করা</div>
+          <div class="feature-item"><i class="fas fa-check-circle"></i> বিশেষ দোয়া ও পানি পড়া দিয়ে তৈরি</div>
+          <div class="feature-item"><i class="fas fa-check-circle"></i> হস্তনির্মিত ও সার্টিফাইড</div>
+        </div>
+        <div class="size-selector mb-4"><div class="size-label">সাইজ নির্বাচন করুন:</div><div class="size-options" id="sizeOptions">
+          <button type="button" class="size-btn" data-size="১৬">১৬</button><button type="button" class="size-btn" data-size="১৭">১৭</button><button type="button" class="size-btn" data-size="১৮">১৮</button><button type="button" class="size-btn" data-size="১৯">১৯</button><button type="button" class="size-btn" data-size="২০">২০</button><button type="button" class="size-btn" data-size="২১">২১</button>
+        </div><small class="size-note">* সাইজ না জানলে অর্ডার ফর্মে উল্লেখ করুন</small></div>
+        <div class="qty-selector mb-4"><div class="qty-label">পরিমাণ:</div><div class="qty-box">
+          <button class="qty-btn" type="button" data-qty="-1">−</button><span class="qty-num" id="qtyNum">1</span><button class="qty-btn" type="button" data-qty="1">+</button>
+        </div><div class="qty-price" id="productQtyPrice">মোট: ৳ ৯৯১</div></div>
+        <div class="product-cta-btns mb-4"><a href="#order" class="btn-buy-now"><i class="fas fa-shopping-bag me-2"></i>এখনই অর্ডার করুন</a></div>
+        <div class="delivery-info"><div class="delivery-item"><i class="fas fa-truck"></i> ঢাকায় ১-২ দিনে, ঢাকার বাইরে ২-৩ দিনে ডেলিভারি</div><div class="delivery-item"><i class="fas fa-money-bill"></i> ক্যাশ অন ডেলিভারি সুবিধা আছে</div></div>
+      </div></div>
+    </div>
+  </div></div>
+
+  <div class="tabs-section"><div class="container">
+    <div class="tabs-nav">
+      <button type="button" class="tab-btn active" data-tab="description">📋 বিবরণ</button>
+      <button type="button" class="tab-btn" data-tab="benefits">✨ উপকারিতা</button>
+      <button type="button" class="tab-btn" data-tab="reviews">⭐ রিভিউ</button>
+    </div>
+    <div class="tab-content-box">
+      <div class="tab-panel" data-panel="description">
+        <div class="desc-content">
+          <h3>রাজমোহিনী আংটি কি?</h3>
+          <p>রাজমোহিনী আংটি হলো একটি বিশেষ ধরনের আংটি যা হযরত সোলেমান (আ.)-এর আমল থেকে পরিচিত। এই আংটিটি বিশেষভাবে পিতল দিয়ে তৈরি করা হয়েছে এবং এতে কোরআনিক আয়াত ও বিশেষ দোয়া খোদাই করা আছে।</p>
+          <p>হাজার বছরের ঐতিহ্যবাহী এই আংটি পরিধান করলে বিপদ থেকে রক্ষা পাওয়া যায়, কালো জাদু ও বদনজরের প্রভাব থেকে মুক্তি পাওয়া যায় এবং জীবনে বরকত ও রিজিক বৃদ্ধি পায়।</p>
+          <div class="spec-table">
+            <div class="spec-row"><div class="spec-key">উপাদান</div><div class="spec-val"> পিতল, খাঁটি রূপা</div></div>
+            <div class="spec-row"><div class="spec-key">ওজন</div><div class="spec-val">১৫-২০ গ্রাম</div></div>
+            <div class="spec-row"><div class="spec-key">সাইজ</div><div class="spec-val">১৬-২১</div></div>
+            <div class="spec-row"><div class="spec-key">রং</div><div class="spec-val">সোনালী/রূপালী ফ্রেম</div></div>
+            <div class="spec-row"><div class="spec-key">খোদাই</div><div class="spec-val">কোরআনিক আয়াত ও সোলেমানি মোহর</div></div>
+            <div class="spec-row"><div class="spec-key">ওয়ারেন্টি</div><div class="spec-val">২৪ ঘণ্টায় রিটার্ন পলিসি</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel d-none" data-panel="benefits" id="benefits">
+        <div class="benefits-content"><h3 class="benefits-title">রাজমোহিনী আংটির উপকারিতা</h3><div class="row g-4"><div class="col-sm-6 col-lg-3"><div class="benefit-card"><div class="benefit-icon">🛡️</div><h4 class="benefit-title">কালো জাদু থেকে সুরক্ষা</h4><p class="benefit-desc">যেকোনো ধরনের কালো জাদু ও তন্ত্র-মন্ত্র থেকে পরিধানকারীকে রক্ষা করে।</p></div></div>
+<div class="col-sm-6 col-lg-3"><div class="benefit-card"><div class="benefit-icon">👁️</div><h4 class="benefit-title">বদনজর দূর করে</h4><p class="benefit-desc">হিংসুকের বদনজর ও নেগেটিভ এনার্জি থেকে সম্পূর্ণ সুরক্ষা প্রদান করে।</p></div></div>
+<div class="col-sm-6 col-lg-3"><div class="benefit-card"><div class="benefit-icon">💰</div><h4 class="benefit-title">রিজিক ও বরকত বৃদ্ধি</h4><p class="benefit-desc">ব্যবসায় উন্নতি, চাকরিতে পদোন্নতি ও অর্থনৈতিক সমৃদ্ধি আনে।</p></div></div>
+<div class="col-sm-6 col-lg-3"><div class="benefit-card"><div class="benefit-icon">🧠</div><h4 class="benefit-title">মানসিক শান্তি</h4><p class="benefit-desc">উদ্বেগ, হতাশা ও মানসিক অশান্তি দূর করে মনে শান্তি আনে।</p></div></div>
+<div class="col-sm-6 col-lg-3"><div class="benefit-card"><div class="benefit-icon">❤️</div><h4 class="benefit-title">প্রেম ও সম্পর্ক</h4><p class="benefit-desc">সম্পর্কে বিশ্বাস ও ভালোবাসা বাড়ায়, দাম্পত্য জীবনে সুখ আনে।</p></div></div>
+<div class="col-sm-6 col-lg-3"><div class="benefit-card"><div class="benefit-icon">🏥</div><h4 class="benefit-title">শারীরিক সুস্থতা</h4><p class="benefit-desc">দীর্ঘমেয়াদি অসুখ ও শারীরিক দুর্বলতা কাটিয়ে উঠতে সহায়তা করে।</p></div></div>
+<div class="col-sm-6 col-lg-3"><div class="benefit-card"><div class="benefit-icon">🎓</div><h4 class="benefit-title">পড়াশোনায় মনোযোগ</h4><p class="benefit-desc">ছাত্রছাত্রীদের মনোযোগ বাড়ায় এবং পড়াশোনায় সাফল্য আনে।</p></div></div>
+<div class="col-sm-6 col-lg-3"><div class="benefit-card"><div class="benefit-icon">🌟</div><h4 class="benefit-title">আত্মবিশ্বাস বৃদ্ধি</h4><p class="benefit-desc">যেকোনো কাজে সাহস ও আত্মবিশ্বাস বাড়িয়ে সাফল্যের পথ সুগম করে।</p></div></div></div></div>
+      </div>
+      <div class="tab-panel d-none" data-panel="reviews">
+        <div class="reviews-content"><h3 class="mb-4">গ্রাহকদের মতামত</h3><div class="row g-4"><div class="col-md-6"><div class="review-card"><div class="review-header"><div class="reviewer-avatar">ম</div><div><div class="reviewer-name">মোঃ রহিম উদ্দিন</div><div class="reviewer-location"><i class="fas fa-map-marker-alt"></i> ঢাকা</div></div><div class="ms-auto review-date">২ সপ্তাহ আগে</div></div><div class="review-stars">★★★★★</div><p class="review-text">সত্যিই অসাধারণ! আমার দীর্ঘদিনের ব্যবসায়িক সমস্যা মাত্র ৭ দিনে সমাধান হয়ে গেছে। আল্লাহর রহমতে এই আংটি পরার পর থেকে বরকত অনেক বেড়েছে।</p><div class="review-verified"><i class="fas fa-check-circle"></i> যাচাইকৃত ক্রেতা</div></div></div>
+<div class="col-md-6"><div class="review-card"><div class="review-header"><div class="reviewer-avatar">স</div><div><div class="reviewer-name">সুমাইয়া বেগম</div><div class="reviewer-location"><i class="fas fa-map-marker-alt"></i> চট্টগ্রাম</div></div><div class="ms-auto review-date">১ মাস আগে</div></div><div class="review-stars">★★★★★</div><p class="review-text">আমার পরিবারে অনেকদিন ধরে অশান্তি ছিল। এই আংটি পরার পর সব ঠিক হয়ে গেছে। খুবই খুশি। ১০০% সত্যিকারের পণ্য।</p><div class="review-verified"><i class="fas fa-check-circle"></i> যাচাইকৃত ক্রেতা</div></div></div>
+<div class="col-md-6"><div class="review-card"><div class="review-header"><div class="reviewer-avatar">জ</div><div><div class="reviewer-name">জামালুদ্দিন</div><div class="reviewer-location"><i class="fas fa-map-marker-alt"></i> সিলেট</div></div><div class="ms-auto review-date">৩ সপ্তাহ আগে</div></div><div class="review-stars">★★★★★</div><p class="review-text">বদনজরের কারণে অনেক কষ্ট পাচ্ছিলাম। এই আংটি পরার পর মনে হচ্ছে একটা সুরক্ষা কবচ আছে। পণ্যের মান অনেক ভালো।</p><div class="review-verified"><i class="fas fa-check-circle"></i> যাচাইকৃত ক্রেতা</div></div></div>
+<div class="col-md-6"><div class="review-card"><div class="review-header"><div class="reviewer-avatar">ন</div><div><div class="reviewer-name">নাসরিন আক্তার</div><div class="reviewer-location"><i class="fas fa-map-marker-alt"></i> রাজশাহী</div></div><div class="ms-auto review-date">১ সপ্তাহ আগে</div></div><div class="review-stars">★★★★★</div><p class="review-text">প্যাকেজিং সুন্দর, পণ্য আসল। কালো আকিক পাথর খুবই সুন্দর। পরিধান করা অনেক আরামদায়ক। অবশ্যই সবাইকে রিকমেন্ড করবো।</p><div class="review-verified"><i class="fas fa-check-circle"></i> যাচাইকৃত ক্রেতা</div></div></div>
+<div class="col-md-6"><div class="review-card"><div class="review-header"><div class="reviewer-avatar">আ</div><div><div class="reviewer-name">আবু বকর</div><div class="reviewer-location"><i class="fas fa-map-marker-alt"></i> কুমিল্লা</div></div><div class="ms-auto review-date">৫ দিন আগে</div></div><div class="review-stars">★★★★★</div><p class="review-text">অনেকদিন ধরে কালো জাদুর শিকার ছিলাম। অনেক জায়গায় গেছি কিন্তু সমাধান পাইনি। এই আংটি পরার পর ধীরে ধীরে সব ঠিক হয়ে যাচ্ছে।</p><div class="review-verified"><i class="fas fa-check-circle"></i> যাচাইকৃত ক্রেতা</div></div></div>
+<div class="col-md-6"><div class="review-card"><div class="review-header"><div class="reviewer-avatar">ফ</div><div><div class="reviewer-name">ফাতেমা খানম</div><div class="reviewer-location"><i class="fas fa-map-marker-alt"></i> ময়মনসিংহ</div></div><div class="ms-auto review-date">২ মাস আগে</div></div><div class="review-stars">★★★★☆</div><p class="review-text">ডেলিভারি দ্রুত ছিল। পণ্যটি দেখতে অনেক সুন্দর এবং পরিধান করতে ভালো লাগছে। আস্তে আস্তে ফলাফল পাচ্ছি।</p><div class="review-verified"><i class="fas fa-check-circle"></i> যাচাইকৃত ক্রেতা</div></div></div></div></div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="why-section"><div class="container"><div class="text-center mb-5"><div class="section-badge">🏆 কেন আমরা সেরা</div><h2 class="section-title text-white">কেন Ruqiya Care বেছে নেবেন?</h2></div><div class="row g-4"><div class="col-sm-6 col-lg-3"><div class="why-card"><div class="why-icon">🔬</div><h4 class="why-title">ল্যাবে পরীক্ষিত</h4><p class="why-desc">প্রতিটি পাথর আন্তর্জাতিক ল্যাবে পরীক্ষিত ও সার্টিফাইড</p></div></div>
+<div class="col-sm-6 col-lg-3"><div class="why-card"><div class="why-icon">🕌</div><h4 class="why-title">ইসলামিক পদ্ধতিতে তৈরি</h4><p class="why-desc">বিশেষ দোয়া ও কোরআনিক পদ্ধতিতে প্রস্তুত করা হয়েছে</p></div></div>
+<div class="col-sm-6 col-lg-3"><div class="why-card"><div class="why-icon">📦</div><h4 class="why-title">সুন্দর প্যাকেজিং</h4><p class="why-desc">গিফট বক্সে সুন্দরভাবে প্যাক করে পাঠানো হয়</p></div></div>
+<div class="col-sm-6 col-lg-3"><div class="why-card"><div class="why-icon">📞</div><h4 class="why-title">২৪/৭ সাপোর্ট</h4><p class="why-desc">যেকোনো সমস্যায় আমরা সবসময় পাশে আছি</p></div></div></div></div></div>
+
+  <div id="order" class="order-section"><div class="container">
+    <div class="text-center mb-5"><div class="section-badge">📦 অর্ডার করুন</div><h2 class="section-title">এখনই অর্ডার করুন</h2><p class="section-sub">ফর্ম পূরণ করুন, আমরা আপনার কাছে পৌঁছে দেব</p></div>
+    <div id="orderContent">
+      <div class="row justify-content-center">
+        <div class="col-lg-7"><div class="order-form-card">
+          <div class="order-form-header"><h4>🛒 অর্ডার ফর্ম</h4><div class="order-summary-mini"><span>রাজমোহিনী আংটি × <span id="formQty">1</span></span><span class="order-price-mini" id="formPrice">৳ ৯৯১</span></div></div>
+      <form
+    id="orderForm"
+    class="order-form"
+    action="https://ruqiyacare.ct.ws/wp-admin/admin-post.php"
+    method="POST"
+>
+
+    <!-- IMPORTANT ACTION -->
+    <input
+        type="hidden"
+        name="action"
+        value="github_ring_order"
+    >
+
+
+    <!-- CUSTOMER NAME -->
+    <div class="mb-3">
+
+        <label class="form-label-custom">
+            আপনার নাম *
+        </label>
+
+        <input
+            id="orderName"
+            name="name"
+            type="text"
+            class="form-control-custom"
+            placeholder="আপনার পূর্ণ নাম লিখুন"
+            required
+        >
+
+    </div>
+
+
+    <!-- PHONE -->
+    <div class="mb-3">
+
+        <label class="form-label-custom">
+            মোবাইল নম্বর *
+        </label>
+
+        <input
+            id="orderPhone"
+            name="phone"
+            type="tel"
+            class="form-control-custom"
+            placeholder="01XXXXXXXXX"
+            required
+        >
+
+    </div>
+
+
+    <!-- ADDRESS -->
+    <div class="mb-3">
+
+        <label class="form-label-custom">
+            সম্পূর্ণ ঠিকানা *
+        </label>
+
+        <textarea
+            id="orderAddress"
+            name="address"
+            class="form-control-custom"
+            rows="3"
+            placeholder="বাড়ি/রোড নং, এলাকা, থানা, জেলা"
+            required
+        ></textarea>
+
+    </div>
+
+
+    <!-- RING SIZE -->
+    <div class="mb-3">
+
+        <label class="form-label-custom">
+            আংটির সাইজ
+        </label>
+
+        <select
+            id="orderSize"
+            name="size"
+            class="form-control-custom"
+        >
+
+            <option value="">
+                সাইজ জানি না (পরে জানাবো)
+            </option>
+
+            <option value="১৬">১৬</option>
+
+            <option value="১৭">১৭</option>
+
+            <option value="১৮">১৮</option>
+
+            <option value="১৯">১৯</option>
+
+            <option value="২০">২০</option>
+
+            <option value="২১">২১</option>
+
+        </select>
+
+    </div>
+
+
+    <!-- QUANTITY -->
+    <div class="mb-4">
+
+        <label class="form-label-custom">
+            পরিমাণ
+        </label>
+
+        <div class="qty-box-form">
+
+
+            <button
+                type="button"
+                class="qty-btn"
+                data-qty="-1"
+            >
+                −
+            </button>
+
+
+            <span
+                class="qty-num"
+                id="formQtyNum"
+            >
+                ১
+            </span>
+
+
+            <button
+                type="button"
+                class="qty-btn"
+                data-qty="1"
+            >
+                +
+            </button>
+
+
+            <span
+                class="qty-total-form"
+                id="formQtyTotal"
+            >
+                মোট: ৳ ৯৯১
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- HIDDEN QUANTITY -->
+    <input
+        type="hidden"
+        id="orderQuantity"
+        name="quantity"
+        value="1"
+    >
+
+
+    <!-- SPAM HONEYPOT -->
+    <input
+        type="text"
+        name="website"
+        id="website"
+        tabindex="-1"
+        autocomplete="off"
+        style="display:none !important;"
+    >
+
+
+    <!-- COD MESSAGE -->
+    <div class="order-payment-note mb-4">
+
+        <i class="fas fa-info-circle me-2"></i>
+
+        পণ্য হাতে পেয়ে টাকা দিন
+        (ক্যাশ অন ডেলিভারি) —
+        কোনো অগ্রিম টাকা দিতে হবে না!
+
+    </div>
+
+
+    <!-- SUBMIT -->
+    <button
+        type="submit"
+        id="submitOrderBtn"
+        class="btn-submit-order"
+    >
+
+        <i class="fas fa-paper-plane me-2"></i>
+
+        অর্ডার নিশ্চিত করুন
+
+    </button>
+
+</form>
+        </div></div>
+        <div class="col-lg-5 mt-4 mt-lg-0"><div class="order-side-info">
+          <div class="order-product-preview"><img src="images/ring-product.png" alt="Ring"><div><div class="preview-name">রাজ-সোলেমানি আংটি</div><div class="preview-price">৳ ৯৯১</div><div class="preview-old">৳ ৪,৫০০ <span class="preview-disc">৪৮% ছাড়</span></div></div></div>
+          <div class="order-info-items">
+            <div class="order-info-item"><i class="fas fa-truck"></i> ঢাকায় ১-২ দিন, বাইরে ২-৩ দিন</div>
+            <div class="order-info-item"><i class="fas fa-money-bill-wave"></i> ক্যাশ অন ডেলিভারি</div>
+            <div class="order-info-item"><i class="fas fa-shield-alt"></i> ১০০% অরিজিনাল গ্যারান্টি</div>
+            <div class="order-info-item"><i class="fas fa-headset"></i> ২৪/৭ কাস্টমার সাপোর্ট</div>
+          </div>
+          <div class="social-proof-box"><div class="sp-title">🔥 আজকে ইতোমধ্যে <strong>৩৭জন</strong> অর্ডার করেছেন!</div><div class="sp-stock">⚠️ স্টক সীমিত! মাত্র <strong>১৫টি</strong> বাকি আছে</div></div>
+        </div></div>
+      </div>
+    </div>
+    <div id="orderSuccess" class="order-success d-none">
+      <div class="success-icon">🎉</div><h3>অর্ডার সফলভাবে গ্রহণ করা হয়েছে!</h3>
+      <p>ধন্যবাদ <strong id="successName"></strong>! আমাদের একজন প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবেন।</p>
+      <div class="success-details">
+        <div><strong>নাম:</strong> <span id="successName2"></span></div><div><strong>ফোন:</strong> <span id="successPhone"></span></div><div><strong>ঠিকানা:</strong> <span id="successAddress"></span></div><div><strong>পরিমাণ:</strong> <span id="successQty"></span>টি</div><div><strong>মোট মূল্য:</strong> <span id="successTotal"></span></div>
+      </div>
+      <p class="success-note"><i class="fas fa-info-circle me-2"></i>পণ্য হাতে পেয়ে টাকা দিতে পারবেন (ক্যাশ অন ডেলিভারি)</p>
+    </div>
+  </div></div>
+
+  <div id="faq" class="faq-section"><div class="container"><div class="text-center mb-5"><div class="section-badge">❓ সাধারণ প্রশ্ন</div><h2 class="section-title">প্রায়শই জিজ্ঞাসিত প্রশ্ন</h2></div>
+    <div class="row justify-content-center"><div class="col-lg-8"><div class="accordion" id="faqAccordion"><div class="faq-item"><button class="faq-question collapsed" type="button" aria-expanded="false"><span>এই আংটি কি সত্যিই কাজ করে?</span><i class="fas fa-chevron-down faq-icon"></i></button><div class="faq-answer">হ্যাঁ, আমাদের হাজার হাজার সন্তুষ্ট গ্রাহক এর প্রমাণ। তবে ফলাফল পেতে ধৈর্য ধরতে হবে এবং নিয়মিত নামাজ-কালাম পড়তে হবে।</div></div>
+<div class="faq-item"><button class="faq-question collapsed" type="button" aria-expanded="false"><span>কতদিনের মধ্যে ফলাফল পাওয়া যাবে?</span><i class="fas fa-chevron-down faq-icon"></i></button><div class="faq-answer">সাধারণত ৭-৩০ দিনের মধ্যে ফলাফল পাওয়া যায়। তবে সমস্যার গভীরতার উপর নির্ভর করে সময় কম-বেশি হতে পারে।</div></div>
+<div class="faq-item"><button class="faq-question collapsed" type="button" aria-expanded="false"><span>পণ্য কীভাবে ডেলিভারি হবে?</span><i class="fas fa-chevron-down faq-icon"></i></button><div class="faq-answer">সারাদেশে কুরিয়ার সার্ভিসের মাধ্যমে ডেলিভারি দেওয়া হয়। ঢাকায় ১-২ দিন এবং ঢাকার বাইরে ২-৩ কার্যদিবসের মধ্যে পৌঁছে যাবে।</div></div>
+<div class="faq-item"><button class="faq-question collapsed" type="button" aria-expanded="false"><span>কীভাবে পেমেন্ট করতে হবে?</span><i class="fas fa-chevron-down faq-icon"></i></button><div class="faq-answer">ক্যাশ অন ডেলিভারি সুবিধা আছে। পণ্য হাতে পেয়ে ডেলিভারি ম্যানকে টাকা দিন। কোনো অগ্রিম পেমেন্ট দিতে হবে না।</div></div>
+<div class="faq-item"><button class="faq-question collapsed" type="button" aria-expanded="false"><span>পণ্য ভালো না লাগলে কী করবো?</span><i class="fas fa-chevron-down faq-icon"></i></button><div class="faq-answer">পণ্য পাওয়ার  দিনের মধ্যে যোগাযোগ করলে আমরা ফেরত নিয়ে নেব।</div></div>
+<div class="faq-item"><button class="faq-question collapsed" type="button" aria-expanded="false"><span>আংটির সাইজ না জানলে কী করবো?</span><i class="fas fa-chevron-down faq-icon"></i></button><div class="faq-answer">অর্ডার ফর্মে সাইজ না জানার কথা উল্লেখ করুন। আমাদের টিম আপনাকে ফোন করে সাইজ নির্ধারণে সহায়তা করবে।</div></div></div></div></div>
+  </div></div>
+
+  <div class="cta-banner"><div class="container text-center"><h2>🔮 আর দেরি না করে এখনই অর্ডার করুন!</h2><p>সীমিত স্টক — এখনই সুযোগ নিন, পরে পস্তাবেন না</p><div class="cta-price"><span class="cta-old">৳ ৪,৫০০</span><span class="cta-new">৳</span></div><a href="#order" class="cta-order-btn"><i class="fas fa-shopping-bag me-2"></i>এখনই অর্ডার করুন — ক্যাশ অন ডেলিভারি</a></div></div>
+
+  <footer class="site-footer"><div class="container"><div class="row g-4">
+    <div class="col-md-4"><div class="footer-brand"><span class="brand-icon">🔮</span><span class="brand-text">Ruqiya <span class="brand-highlight">Care</span></span></div><p class="footer-about">আমরা বিশ্বস্ত ও মানসম্পন্ন পণ্য সরবরাহ করি। আমাদের প্রতিটি পণ্য সম্পূর্ণ পরীক্ষিত ও অরিজিনাল।</p></div>
+    <div class="col-md-4"><h5 class="footer-heading">যোগাযোগ করুন</h5><div class="footer-contact-item"><i class="fas fa-phone"></i> 01XXXXXXXXX</div><div class="footer-contact-item"> সকাল ৯টা - রাত ১০টা</div></div>
+  </div><hr class="footer-hr"><div class="footer-bottom"><p>© ২০২৪ Tramp Agc। সকল স্বত্ব সংরক্ষিত।</p><div class="footer-links"><a href="#">গোপনীয়তা নীতি</a><a href="#">ব্যবহারের শর্ত</a><a href="#">রিটার্ন পলিসি</a></div></div></div></footer>
+
+  <div class="sticky-cta"><div class="container"><div class="sticky-cta-inner"><div class="sticky-price"><span class="sticky-new-price">৳</span><span class="sticky-old-price">৳ ৪,৫০০</span></div><a href="#order" class="sticky-order-btn"><i class="fas fa-shopping-cart me-2"></i>অর্ডার করুন</a></div></div></div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -23,7 +23,7 @@
     return "৳ " + bnNumber(number);
   }
 
-  function getElement(id) {
+  function get(id) {
     return document.getElementById(id);
   }
 
@@ -35,21 +35,21 @@
   let totalSeconds = (5 * 3600) + (47 * 60) + 23;
 
   function updateCountdown() {
-    const hoursEl = getElement("hours");
-    const minutesEl = getElement("minutes");
-    const secondsEl = getElement("seconds");
+    const hours = get("hours");
+    const minutes = get("minutes");
+    const seconds = get("seconds");
 
-    if (!hoursEl || !minutesEl || !secondsEl) {
+    if (!hours || !minutes || !seconds) {
       return;
     }
 
-    const hours = Math.floor(totalSeconds / 3600);
-    const minutes = Math.floor((totalSeconds % 3600) / 60);
-    const seconds = totalSeconds % 60;
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
 
-    hoursEl.textContent = String(hours).padStart(2, "0");
-    minutesEl.textContent = String(minutes).padStart(2, "0");
-    secondsEl.textContent = String(seconds).padStart(2, "0");
+    hours.textContent = String(h).padStart(2, "0");
+    minutes.textContent = String(m).padStart(2, "0");
+    seconds.textContent = String(s).padStart(2, "0");
 
     totalSeconds--;
 
@@ -81,8 +81,8 @@
 
   let notificationIndex = 0;
 
-  const notificationPopup = getElement("notifPopup");
-  const notificationMessage = getElement("notifMsg");
+  const notificationPopup = get("notifPopup");
+  const notificationMessage = get("notifMsg");
 
   function showNotification() {
     if (!notificationPopup || !notificationMessage) {
@@ -111,23 +111,19 @@
      PRODUCT GALLERY
   ========================================================= */
 
-  const mainProductImage = getElement("mainProductImg");
-  const thumbnails = document.querySelectorAll(".thumb-img");
+  const mainProductImg = get("mainProductImg");
 
-  thumbnails.forEach(function (thumbnail) {
-    thumbnail.addEventListener("click", function () {
+  document.querySelectorAll(".thumb-img").forEach(function (thumb) {
+    thumb.addEventListener("click", function () {
 
-      thumbnails.forEach(function (item) {
+      document.querySelectorAll(".thumb-img").forEach(function (item) {
         item.classList.remove("active");
       });
 
-      thumbnail.classList.add("active");
+      thumb.classList.add("active");
 
-      if (
-        mainProductImage &&
-        thumbnail.dataset.img
-      ) {
-        mainProductImage.src = thumbnail.dataset.img;
+      if (mainProductImg && thumb.dataset.img) {
+        mainProductImg.src = thumb.dataset.img;
       }
 
     });
@@ -160,10 +156,10 @@
 
     if (tabName === "benefits") {
 
-      const benefitsSection = getElement("benefits");
+      const benefits = get("benefits");
 
-      if (benefitsSection) {
-        benefitsSection.scrollIntoView({
+      if (benefits) {
+        benefits.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
@@ -171,7 +167,6 @@
 
     }
   }
-
 
   document.querySelectorAll(".tab-btn").forEach(function (button) {
 
@@ -228,10 +223,10 @@
 
     });
 
-    const sizeSelect = getElement("orderSize");
+    const select = get("orderSize");
 
-    if (sizeSelect) {
-      sizeSelect.value = selectedSize;
+    if (select) {
+      select.value = selectedSize;
     }
 
   }
@@ -240,79 +235,99 @@
   document.querySelectorAll(".size-btn").forEach(function (button) {
 
     button.addEventListener("click", function () {
-
       setSize(button.dataset.size);
-
     });
 
   });
 
 
-  const orderSizeSelect = getElement("orderSize");
+  const orderSize = get("orderSize");
 
-  if (orderSizeSelect) {
+  if (orderSize) {
 
-    orderSizeSelect.addEventListener(
-      "change",
-      function (event) {
+    orderSize.addEventListener("change", function (event) {
 
-        setSize(event.target.value);
+      setSize(event.target.value);
 
-      }
-    );
+    });
 
   }
 
 
   /* =========================================================
-     QUANTITY SYSTEM
+     QUANTITY
   ========================================================= */
 
   function updateQuantity() {
 
-    const totalPrice = PRICE * quantity;
+    const total = PRICE * quantity;
 
-    const qtyNum = getElement("qtyNum");
-    const formQty = getElement("formQty");
-    const formQtyNum = getElement("formQtyNum");
-    const productQtyPrice = getElement("productQtyPrice");
-    const formPrice = getElement("formPrice");
-    const formQtyTotal = getElement("formQtyTotal");
-    const hiddenQuantity = getElement("orderQuantity");
+    const qtyNum =
+      get("qtyNum");
+
+    const formQty =
+      get("formQty");
+
+    const formQtyNum =
+      get("formQtyNum");
+
+    const productQtyPrice =
+      get("productQtyPrice");
+
+    const formPrice =
+      get("formPrice");
+
+    const formQtyTotal =
+      get("formQtyTotal");
+
+    const orderQuantity =
+      get("orderQuantity");
+
 
     if (qtyNum) {
-      qtyNum.textContent = bnNumber(quantity);
+      qtyNum.textContent =
+        bnNumber(quantity);
     }
+
 
     if (formQty) {
-      formQty.textContent = bnNumber(quantity);
+      formQty.textContent =
+        bnNumber(quantity);
     }
 
+
     if (formQtyNum) {
-      formQtyNum.textContent = bnNumber(quantity);
+      formQtyNum.textContent =
+        bnNumber(quantity);
     }
+
 
     if (productQtyPrice) {
       productQtyPrice.textContent =
-        "মোট: " + money(totalPrice);
+        "মোট: " + money(total);
     }
+
 
     if (formPrice) {
       formPrice.textContent =
-        money(totalPrice);
+        money(total);
     }
+
 
     if (formQtyTotal) {
       formQtyTotal.textContent =
-        "মোট: " + money(totalPrice);
+        "মোট: " + money(total);
     }
 
+
     /*
-     * This value will be sent to WooCommerce.
+     * This hidden input is sent to WordPress.
      */
-    if (hiddenQuantity) {
-      hiddenQuantity.value = quantity;
+    if (orderQuantity) {
+      orderQuantity.value =
+        String(quantity);
     }
+
   }
 
 
@@ -320,27 +335,32 @@
 
     button.addEventListener("click", function () {
 
-      const change = Number(button.dataset.qty);
+      const delta =
+        Number(button.dataset.qty);
 
-      if (Number.isNaN(change)) {
+      if (Number.isNaN(delta)) {
         return;
       }
 
-      quantity = quantity + change;
+      quantity += delta;
 
       /*
-       * Minimum = 1
-       * Maximum = 5
+       * Minimum quantity = 1
+       * Maximum quantity = 5
        */
-      quantity = Math.max(1, quantity);
-      quantity = Math.min(5, quantity);
+      if (quantity < 1) {
+        quantity = 1;
+      }
+
+      if (quantity > 5) {
+        quantity = 5;
+      }
 
       updateQuantity();
 
     });
 
   });
-
 
   updateQuantity();
 
@@ -355,7 +375,8 @@
 
       button.addEventListener("click", function () {
 
-        const item = button.closest(".faq-item");
+        const item =
+          button.closest(".faq-item");
 
         if (!item) {
           return;
@@ -366,7 +387,7 @@
 
 
         /*
-         * Close all open FAQ items
+         * Close all opened FAQ items
          */
         document
           .querySelectorAll(".faq-item.open")
@@ -392,7 +413,7 @@
 
 
         /*
-         * Open clicked item
+         * Open selected FAQ
          */
         if (!wasOpen) {
 
@@ -413,93 +434,197 @@
 
 
   /* =========================================================
-     DIRECT ORDER FORM
+     ORDER FORM
   ========================================================= */
 
-  const orderForm = getElement("orderForm");
-  const submitButton = getElement("submitOrderBtn");
+  const orderForm =
+    get("orderForm");
+
+  const submitButton =
+    get("submitOrderBtn");
+
 
   if (orderForm) {
 
-    orderForm.addEventListener("submit", function (event) {
+    orderForm.addEventListener(
+      "submit",
+      function (event) {
 
-      /*
-       * IMPORTANT:
-       *
-       * আমরা normal form POST ব্যবহার করছি।
-       *
-       * তাই valid হলে এখানে
-       * event.preventDefault() ব্যবহার করা যাবে না।
-       */
+        /*
+         * IMPORTANT:
+         *
+         * এখানে valid form-এর জন্য
+         * preventDefault() ব্যবহার করবো না।
+         *
+         * Browser normal POST করবে:
+         *
+         * /wp-admin/admin-post.php
+         *
+         */
 
 
-      /* -----------------------------------------------------
-         Browser validation
-      ----------------------------------------------------- */
+        /* -----------------------------------------------------
+           HTML validation
+        ----------------------------------------------------- */
 
-      if (!orderForm.checkValidity()) {
+        if (!orderForm.checkValidity()) {
 
-        event.preventDefault();
+          event.preventDefault();
 
-        orderForm.reportValidity();
+          orderForm.reportValidity();
 
-        return;
+          return;
+
+        }
+
+
+        /* -----------------------------------------------------
+           Get customer data
+        ----------------------------------------------------- */
+
+        const nameInput =
+          get("orderName");
+
+        const phoneInput =
+          get("orderPhone");
+
+        const addressInput =
+          get("orderAddress");
+
+        const sizeInput =
+          get("orderSize");
+
+        const quantityInput =
+          get("orderQuantity");
+
+
+        const customerName =
+          nameInput
+            ? nameInput.value.trim()
+            : "";
+
+        const customerPhone =
+          phoneInput
+            ? phoneInput.value.trim()
+            : "";
+
+        const customerAddress =
+          addressInput
+            ? addressInput.value.trim()
+            : "";
+
+        const customerSize =
+          sizeInput
+            ? sizeInput.value
+            : "";
+
+
+
+        /* -----------------------------------------------------
+           Update selected size
+        ----------------------------------------------------- */
+
+        if (sizeInput) {
+
+          selectedSize =
+            sizeInput.value || "";
+
+        }
+
+
+        /* -----------------------------------------------------
+           Update quantity
+        ----------------------------------------------------- */
+
+        if (quantityInput) {
+
+          quantityInput.value =
+            String(quantity);
+
+        }
+
+
+        /* -----------------------------------------------------
+           Save information temporarily
+           for success screen
+        ----------------------------------------------------- */
+
+        try {
+
+          sessionStorage.setItem(
+            "orderName",
+            customerName
+          );
+
+          sessionStorage.setItem(
+            "orderPhone",
+            customerPhone
+          );
+
+          sessionStorage.setItem(
+            "orderAddress",
+            customerAddress
+          );
+
+          sessionStorage.setItem(
+            "orderSize",
+            customerSize
+          );
+
+          sessionStorage.setItem(
+            "orderQuantity",
+            String(quantity)
+          );
+
+        } catch (storageError) {
+
+          console.warn(
+            "Session storage unavailable:",
+            storageError
+          );
+
+        }
+
+
+        /* -----------------------------------------------------
+           Prevent double clicking
+        ----------------------------------------------------- */
+
+        if (submitButton) {
+
+          submitButton.disabled =
+            true;
+
+          submitButton.innerHTML =
+            '<i class="fas fa-spinner fa-spin me-2"></i>' +
+            'অর্ডার পাঠানো হচ্ছে...';
+
+        }
+
+
+        /*
+         * VERY IMPORTANT:
+         *
+         * No event.preventDefault() here.
+         *
+         * The browser now sends:
+         *
+         * POST
+         * ↓
+         * https://ruqiyacare.ct.ws/wp-admin/admin-post.php
+         *
+         * with:
+         *
+         * action=github_ring_order
+         * name=...
+         * phone=...
+         * address=...
+         * size=...
+         * quantity=...
+         */
 
       }
-
-
-      /* -----------------------------------------------------
-         Update hidden quantity
-      ----------------------------------------------------- */
-
-      const hiddenQuantity =
-        getElement("orderQuantity");
-
-      if (hiddenQuantity) {
-        hiddenQuantity.value = String(quantity);
-      }
-
-
-      /* -----------------------------------------------------
-         Update selected size
-      ----------------------------------------------------- */
-
-      const sizeSelect =
-        getElement("orderSize");
-
-      if (sizeSelect) {
-        sizeSelect.value = selectedSize;
-      }
-
-
-      /* -----------------------------------------------------
-         Disable submit button
-         Prevent accidental double order
-      ----------------------------------------------------- */
-
-      if (submitButton) {
-
-        submitButton.disabled = true;
-
-        submitButton.innerHTML =
-          '<i class="fas fa-spinner fa-spin me-2"></i>' +
-          'অর্ডার পাঠানো হচ্ছে...';
-
-      }
-
-      /*
-       * NO preventDefault() here.
-       *
-       * Browser এখন automatically:
-       *
-       * POST
-       * ↓
-       * /wp-admin/admin-post.php
-       *
-       * করবে।
-       */
-
-    });
+    );
 
   }
 
@@ -516,7 +641,8 @@
 
         event.preventDefault();
 
-        const orderSection = getElement("order");
+        const orderSection =
+          get("order");
 
         if (orderSection) {
 
@@ -533,11 +659,13 @@
 
 
   /* =========================================================
-     SUCCESS PAGE HANDLER
+     SUCCESS URL HANDLER
   ========================================================= */
 
   const urlParams =
-    new URLSearchParams(window.location.search);
+    new URLSearchParams(
+      window.location.search
+    );
 
   const orderStatus =
     urlParams.get("order");
@@ -551,11 +679,89 @@
     orderId
   ) {
 
+    /* -------------------------------------------------------
+       Get stored customer information
+    ------------------------------------------------------- */
+
+    let savedName = "";
+    let savedPhone = "";
+    let savedAddress = "";
+    let savedSize = "";
+    let savedQuantity = "1";
+
+
+    try {
+
+      savedName =
+        sessionStorage.getItem(
+          "orderName"
+        ) || "";
+
+      savedPhone =
+        sessionStorage.getItem(
+          "orderPhone"
+        ) || "";
+
+      savedAddress =
+        sessionStorage.getItem(
+          "orderAddress"
+        ) || "";
+
+      savedSize =
+        sessionStorage.getItem(
+          "orderSize"
+        ) || "";
+
+      savedQuantity =
+        sessionStorage.getItem(
+          "orderQuantity"
+        ) || "1";
+
+    } catch (storageError) {
+
+      console.warn(
+        "Unable to read session storage:",
+        storageError
+      );
+
+    }
+
+
+    const savedQty =
+      Number(savedQuantity) || 1;
+
+
+    /* -------------------------------------------------------
+       Success section
+    ------------------------------------------------------- */
+
+    const successSection =
+      get("orderSuccess");
+
+    const orderContent =
+      get("orderContent");
+
+
+    if (orderContent) {
+      orderContent.classList.add("d-none");
+    }
+
+
+    if (successSection) {
+      successSection.classList.remove("d-none");
+    }
+
+
+    /* -------------------------------------------------------
+       Simple success box
+    ------------------------------------------------------- */
+
     const successMessage =
-      getElement("orderSuccessMessage");
+      get("orderSuccessMessage");
 
     const successOrderId =
-      getElement("successOrderId");
+      get("successOrderId");
+
 
     if (successOrderId) {
 
@@ -567,178 +773,143 @@
 
     if (successMessage) {
 
-      successMessage.classList.remove("d-none");
+      successMessage.classList.remove(
+        "d-none"
+      );
 
     }
 
 
-    /*
-     * Optional:
-     * scroll to success message
-     */
+    /* -------------------------------------------------------
+       Customer name
+    ------------------------------------------------------- */
 
-    if (successMessage) {
+    const successName =
+      get("successName");
 
-      setTimeout(function () {
+    const successName2 =
+      get("successName2");
+
+
+    if (successName) {
+
+      successName.textContent =
+        savedName;
+
+    }
+
+
+    if (successName2) {
+
+      successName2.textContent =
+        savedName;
+
+    }
+
+
+    /* -------------------------------------------------------
+       Customer phone
+    ------------------------------------------------------- */
+
+    const successPhone =
+      get("successPhone");
+
+
+    if (successPhone) {
+
+      successPhone.textContent =
+        savedPhone;
+
+    }
+
+
+    /* -------------------------------------------------------
+       Customer address
+    ------------------------------------------------------- */
+
+    const successAddress =
+      get("successAddress");
+
+
+    if (successAddress) {
+
+      successAddress.textContent =
+        savedAddress;
+
+    }
+
+
+    /* -------------------------------------------------------
+       Quantity
+    ------------------------------------------------------- */
+
+    const successQty =
+      get("successQty");
+
+
+    if (successQty) {
+
+      successQty.textContent =
+        bnNumber(savedQty);
+
+    }
+
+
+    /* -------------------------------------------------------
+       Total
+    ------------------------------------------------------- */
+
+    const successTotal =
+      get("successTotal");
+
+
+    if (successTotal) {
+
+      successTotal.textContent =
+        money(PRICE * savedQty);
+
+    }
+
+
+    /* -------------------------------------------------------
+       Ring size
+    ------------------------------------------------------- */
+
+    const successSize =
+      get("successSize");
+
+
+    if (successSize) {
+
+      successSize.textContent =
+        savedSize || "পরে জানাবেন";
+
+    }
+
+
+    /* -------------------------------------------------------
+       Scroll to success section
+    ------------------------------------------------------- */
+
+    setTimeout(function () {
+
+      if (successSection) {
+
+        successSection.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      } else if (successMessage) {
 
         successMessage.scrollIntoView({
           behavior: "smooth",
           block: "center"
         });
 
-      }, 300);
-
-    }
-
-  }
-
-
-  /* =========================================================
-     SUCCESS MESSAGE - OPTIONAL
-  ========================================================= */
-
-  /*
-   * If you use the old success section,
-   * these values can still be shown.
-   */
-
-  if (
-    orderStatus === "success" &&
-    orderId
-  ) {
-
-    const successName =
-      getElement("successName");
-
-    const successName2 =
-      getElement("successName2");
-
-    const successPhone =
-      getElement("successPhone");
-
-    const successAddress =
-      getElement("successAddress");
-
-    const successQty =
-      getElement("successQty");
-
-    const successTotal =
-      getElement("successTotal");
-
-    const customerName =
-      sessionStorage.getItem("orderName");
-
-    const customerPhone =
-      sessionStorage.getItem("orderPhone");
-
-    const customerAddress =
-      sessionStorage.getItem("orderAddress");
-
-    const customerQuantity =
-      sessionStorage.getItem("orderQuantity");
-
-
-    if (customerName) {
-
-      if (successName) {
-        successName.textContent =
-          customerName;
       }
 
-      if (successName2) {
-        successName2.textContent =
-          customerName;
-      }
-
-    }
-
-
-    if (customerPhone && successPhone) {
-      successPhone.textContent =
-        customerPhone;
-    }
-
-
-    if (customerAddress && successAddress) {
-      successAddress.textContent =
-        customerAddress;
-    }
-
-
-    if (customerQuantity) {
-
-      const qty =
-        Number(customerQuantity);
-
-      if (successQty) {
-        successQty.textContent =
-          bnNumber(qty);
-      }
-
-      if (successTotal) {
-        successTotal.textContent =
-          money(PRICE * qty);
-      }
-
-    }
-
-  }
-
-
-  /* =========================================================
-     SAVE CUSTOMER DATA BEFORE SUBMIT
-     ========================================================= */
-
-  if (orderForm) {
-
-    orderForm.addEventListener("submit", function () {
-
-      const nameInput =
-        getElement("orderName");
-
-      const phoneInput =
-        getElement("orderPhone");
-
-      const addressInput =
-        getElement("orderAddress");
-
-
-      if (nameInput) {
-
-        sessionStorage.setItem(
-          "orderName",
-          nameInput.value.trim()
-        );
-
-      }
-
-
-      if (phoneInput) {
-
-        sessionStorage.setItem(
-          "orderPhone",
-          phoneInput.value.trim()
-        );
-
-      }
-
-
-      if (addressInput) {
-
-        sessionStorage.setItem(
-          "orderAddress",
-          addressInput.value.trim()
-        );
-
-      }
-
-
-      sessionStorage.setItem(
-        "orderQuantity",
-        String(quantity)
-      );
-
-    });
+    }, 300);
 
   }
 
